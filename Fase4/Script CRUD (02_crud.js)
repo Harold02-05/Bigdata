@@ -1,0 +1,22 @@
+Create
+db.usuarios.insertOne({
+  usuario_id: 41,
+  nombre: "Nuevo Usuario",
+  correo: "nuevo@gmail.com",
+  edad: 30,
+  plan: "Basico"
+});
+
+Read
+db.usuarios.find();
+
+Update
+db.usuarios.updateOne(
+  { usuario_id: 1 },
+  { $set: { plan: "Premium" } }
+);
+
+Delete
+db.usuarios.deleteOne(
+  { usuario_id: 40 }
+);
