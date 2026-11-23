@@ -1,0 +1,12 @@
+db.usuarios.find({
+  plan: "Premium"
+});
+
+db.usuarios.find({
+  edad: { $gt: 30 }
+});
+
+db.usuarios.find({
+  plan: "Premium",
+  edad: { $gt: 25 }
+});
