@@ -1,0 +1,10 @@
+db.conexiones.aggregate([
+  {
+    $lookup: {
+      from: "usuarios",
+      localField: "usuario_id",
+      foreignField: "usuario_id",
+      as: "datos_usuario"
+    }
+  }
+]);
