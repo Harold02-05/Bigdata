@@ -1,0 +1,33 @@
+use("wifi_comunitaria");
+
+// Usuarios
+for (let i = 4; i <= 40; i++) {
+  db.usuarios.insertOne({
+    usuario_id: i,
+    nombre: "Usuario " + i,
+    correo: "usuario" + i + "@gmail.com",
+    edad: Math.floor(Math.random() * 40) + 18,
+    plan: i % 2 === 0 ? "Basico" : "Premium"
+  });
+}
+
+// Puntos de acceso
+for (let i = 1; i <= 20; i++) {
+  db.puntos_acceso.insertOne({
+    punto_acceso_id: i,
+    nombre: "AP_" + i,
+    ubicacion: "Sector " + i,
+    capacidad: 50 + (i * 10)
+  });
+}
+
+// Conexiones
+for (let i = 1; i <= 40; i++) {
+  db.conexiones.insertOne({
+    conexion_id: i,
+    usuario_id: Math.floor(Math.random() * 40) + 1,
+    punto_acceso_id: Math.floor(Math.random() * 20) + 1,
+    consumo_mb: Math.floor(Math.random() * 5000),
+    fecha: new Date()
+  });
+}
