@@ -13,7 +13,6 @@ db.conexiones.aggregate([
   }
 ]);
 
-
 Promedio de consumo. 
 db.conexiones.aggregate([
   {
@@ -37,5 +36,3 @@ db.conexiones.aggregate([
     }
   }
 ]);
-
-
