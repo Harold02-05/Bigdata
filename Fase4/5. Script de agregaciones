@@ -1,1 +1,41 @@
+Conteo
 db.usuarios.countDocuments();
+
+Total Cosunmo.
+db.conexiones.aggregate([
+  {
+    $group: {
+      _id: null,
+      total_consumo: {
+        $sum: "$consumo_mb"
+      }
+    }
+  }
+]);
+
+
+Promedio de consumo. 
+db.conexiones.aggregate([
+  {
+    $group: {
+      _id: null,
+      promedio_consumo: {
+        $avg: "$consumo_mb"
+      }
+    }
+  }
+]);
+
+Consumo maximo. 
+db.conexiones.aggregate([
+  {
+    $group: {
+      _id: null,
+      consumo_maximo: {
+        $max: "$consumo_mb"
+      }
+    }
+  }
+]);
+
+
